@@ -1,0 +1,39 @@
+# Validation of the fictional portfolio edition
+
+These are new runs against `data/portfolio-demo.json`; no private-project test results are reused. The source runtime contains no HTTP AI adapter and registers the deterministic planner unconditionally. No paid provider or cloud service was called. Date: 20 November 2026 (Asia/Jerusalem).
+
+| Check | Command | Actual result |
+|---|---|---|
+| Backend build | `dotnet build StraussDriveAI-Portfolio.sln --no-restore -m:2` | Passed, zero warnings/errors |
+| Backend tests | `dotnet test StraussDriveAI-Portfolio.sln --no-build --no-restore` | 57 passed, zero failed/skipped |
+| Frontend tests | `npm --prefix frontend test` | 11 passed |
+| Frontend build | `npm --prefix frontend run build` | Passed; includes third-party notices alongside bundles/fonts |
+| Documented local launcher | `python3 tools/run_demo.py --api-port 5182 --frontend-port 5183` | API healthy, frontend HTTP 200 with demo banner, provider `deterministic-demo`; shutdown verified by both ports closing |
+| Independent fictional references | `dotnet run --no-build --project tools/StraussDrive.Data` | 50 field checks matched, zero mismatches |
+| Browser workflows | `CI=1 PORTFOLIO_API_PORT=5180 PORTFOLIO_UI_PORT=5181 npm --prefix frontend run test:e2e` | 10 passed: five desktop and five mobile Chromium |
+
+Local port overrides avoid occupied shared-workspace ports; the documented defaults remain 5080/5173. Windows/macOS launcher paths are not manually verified in this Linux run.
+
+Browser tests use real local ASP.NET/SQLite and Vite servers, with external browser destinations blocked. They cover family comparison and a budget follow-up, reload persistence, eligible waiver and mandatory-vehicle rejection, catalog/comparison rendering, axe WCAG 2 A/AA checks on the comparison page, mobile overflow, private scenario save/reload and explicit employee handoff followed by a representative response/resumed calculation. Four fresh desktop screenshots are captured from this fictional edition; no private screenshots are reused.
+
+Backend tests cover five independent financial fixtures, different occupation groups and eligibility, the original 40/60 family split, electric gross-up, waiver, aliases/IDs, native shaped goal plans and duplicate comparison execution, forbidden authority fields, follow-ups and explicit handoff confirmation, CSRF, ownership, logout revocation and role separation. Retained synthetic security regressions cover the Basic gate and representative session expiry/revocation. A configuration test supplies unusable synthetic external-provider settings and explicitly disables the old deterministic flag; the server still selects the deterministic planner because no networking provider is distributed.
+
+## Independently authored expected displayed results
+
+All figures are fictional demonstration units, displayed with a shekel symbol; year 2099 is not a real tax regime.
+
+| Profile | Current net | Alternative net | Difference |
+|---|---:|---:|---:|
+| DEMO-P01 / Alpha: ORBIT → PULSE | 9,945 | 10,138 | +193 |
+| DEMO-P02 / Beta: MEADOW → HARBOR family | 13,074 | 12,085 | −989 |
+| DEMO-P03 / Gamma: SUMMIT → waiver | 16,778 | 18,470 | +1,692 |
+| DEMO-P04 / Delta: ORBIT → LANTERN | 11,152 | 11,203 | +51 |
+| DEMO-P05 / Epsilon: waiver → ORBIT | 10,591 | 9,555 | −1,036 |
+
+The reference authoring tool is independent Python Decimal code, not the application engine. Tests read committed expectations and never regenerate them. Beta's family gap is 5,300 − 3,300 = 2,000; employee share 800 and employer share 1,200. The electric benefit is 175 net. Display rounding is separate from precise internal arithmetic.
+
+## Limits
+
+All planning is deterministic or scripted; no live-model accuracy claim is made. Browser tests are emulation in Chromium, not physical devices or other engines. Automated axe checks do not establish complete accessibility. This is not a penetration test, production payroll validation or enterprise readiness review. The .NET test runner emits an informational temporary-artifact-directory message; it does not skip tests.
+
+Review `docs/RELEASE_REVIEW.md` and run `python3 tools/release_audit.py` against the final staged/tracked files before publication. Dependencies require network during initial restore/install; normal demo interactions require no external provider or account. This review does not check remote GitHub/cloud settings because no public repository or deployment is created.

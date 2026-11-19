@@ -1,0 +1,241 @@
+{
+  "version": "portfolio-original-v1",
+  "note": "Original fictional portfolio data. Year 2099. Not tax advice, not government data, and not Strauss policies.",
+  "budgets": {
+    "א": 2100,
+    "ב": 3300,
+    "ג": 4700
+  },
+  "family": {
+    "minChildren": 3,
+    "maxAge": 20,
+    "employeeGapShare": 0.4
+  },
+  "electricNetBonus": 175,
+  "tax": {
+    "year": 2099,
+    "incomeBrackets": [
+      [
+        10000,
+        0.1
+      ],
+      [
+        20000,
+        0.2
+      ],
+      [
+        null,
+        0.3
+      ]
+    ],
+    "creditPoint": 100,
+    "nationalInsurance": 0.01,
+    "healthInsurance": 0.02
+  },
+  "vehicles": [
+    {
+      "id": "DEMO-101",
+      "name": "ORBIT",
+      "group": "א",
+      "drive": "0",
+      "value": 1100,
+      "cost": 1800,
+      "participation": 90
+    },
+    {
+      "id": "DEMO-102",
+      "name": "PULSE",
+      "group": "א",
+      "drive": "3",
+      "value": 850,
+      "cost": 1950,
+      "participation": 130
+    },
+    {
+      "id": "DEMO-103",
+      "name": "MEADOW",
+      "group": "ב",
+      "drive": "0",
+      "value": 1750,
+      "cost": 2950,
+      "participation": 220
+    },
+    {
+      "id": "DEMO-104",
+      "name": "LANTERN",
+      "group": "ב",
+      "drive": "3",
+      "value": 1250,
+      "cost": 3100,
+      "participation": 180
+    },
+    {
+      "id": "DEMO-105",
+      "name": "SUMMIT",
+      "group": "ג",
+      "drive": "3",
+      "value": 2100,
+      "cost": 4200,
+      "participation": 270
+    },
+    {
+      "id": "DEMO-106",
+      "name": "HARBOR",
+      "group": "ג",
+      "drive": "0",
+      "value": 2700,
+      "cost": 5300,
+      "participation": 160,
+      "family": true
+    }
+  ],
+  "occupations": [
+    {
+      "name": "מעצבת הדגמה",
+      "group": "א",
+      "mandatory": false,
+      "allowance": 900
+    },
+    {
+      "name": "טכנאי הדגמה נייד",
+      "group": "ב",
+      "mandatory": true,
+      "allowance": 0
+    },
+    {
+      "name": "מתכננת הדגמה",
+      "group": "ג",
+      "mandatory": false,
+      "allowance": 1350
+    }
+  ],
+  "employees": [
+    {
+      "id": "DEMO-P01",
+      "name": "פרופיל הדגמה אלפא",
+      "occupation": "מעצבת הדגמה",
+      "base": 12500,
+      "commission": 300,
+      "bonus": 0,
+      "children": 0,
+      "current": "DEMO-101",
+      "alternative": "DEMO-102"
+    },
+    {
+      "id": "DEMO-P02",
+      "name": "פרופיל הדגמה בטא",
+      "occupation": "טכנאי הדגמה נייד",
+      "base": 16700,
+      "commission": 800,
+      "bonus": 100,
+      "children": 3,
+      "current": "DEMO-103",
+      "alternative": "DEMO-106"
+    },
+    {
+      "id": "DEMO-P03",
+      "name": "פרופיל הדגמה גמא",
+      "occupation": "מתכננת הדגמה",
+      "base": 23100,
+      "commission": 0,
+      "bonus": 450,
+      "children": 1,
+      "current": "DEMO-105",
+      "alternative": null
+    },
+    {
+      "id": "DEMO-P04",
+      "name": "פרופיל הדגמה דלתא",
+      "occupation": "טכנאי הדגמה נייד",
+      "base": 14200,
+      "commission": 250,
+      "bonus": 50,
+      "children": 2,
+      "current": "DEMO-101",
+      "alternative": "DEMO-104"
+    },
+    {
+      "id": "DEMO-P05",
+      "name": "פרופיל הדגמה אפסילון",
+      "occupation": "מעצבת הדגמה",
+      "base": 11900,
+      "commission": 150,
+      "bonus": 200,
+      "children": 0,
+      "current": null,
+      "alternative": "DEMO-101"
+    }
+  ],
+  "references": [
+    {
+      "employeeId": "DEMO-P01",
+      "current": "DEMO-101",
+      "alternative": "DEMO-102",
+      "currentNet": 9945,
+      "alternativeNet": 10138,
+      "difference": 193,
+      "currentTax": 1580,
+      "alternativeTax": 1575,
+      "currentInsurance": 417,
+      "alternativeInsurance": 416,
+      "electricGross": 227,
+      "familyShare": 0
+    },
+    {
+      "employeeId": "DEMO-P02",
+      "current": "DEMO-103",
+      "alternative": "DEMO-106",
+      "currentNet": 13074,
+      "alternativeNet": 12085,
+      "difference": -989,
+      "currentTax": 2670,
+      "alternativeTax": 2890,
+      "currentInsurance": 581,
+      "alternativeInsurance": 609,
+      "electricGross": 0,
+      "familyShare": 800
+    },
+    {
+      "employeeId": "DEMO-P03",
+      "current": "DEMO-105",
+      "alternative": null,
+      "currentNet": 16778,
+      "alternativeNet": 18470,
+      "difference": 1692,
+      "currentTax": 4573,
+      "alternativeTax": 4270,
+      "currentInsurance": 777,
+      "alternativeInsurance": 747,
+      "electricGross": 0,
+      "familyShare": 0
+    },
+    {
+      "employeeId": "DEMO-P04",
+      "current": "DEMO-101",
+      "alternative": "DEMO-104",
+      "currentNet": 11152,
+      "alternativeNet": 11203,
+      "difference": 51,
+      "currentTax": 1920,
+      "alternativeTax": 1995,
+      "currentInsurance": 468,
+      "alternativeInsurance": 479,
+      "electricGross": 227,
+      "familyShare": 0
+    },
+    {
+      "employeeId": "DEMO-P05",
+      "current": null,
+      "alternative": "DEMO-101",
+      "currentNet": 10591,
+      "alternativeNet": 9555,
+      "difference": -1036,
+      "currentTax": 1430,
+      "alternativeTax": 1470,
+      "currentInsurance": 395,
+      "alternativeInsurance": 401,
+      "electricGross": 0,
+      "familyShare": 0
+    }
+  ]
+}
