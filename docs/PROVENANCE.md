@@ -4,7 +4,7 @@
 
 The owner-supplied private project implementation was selectively copied into a separate directory: C# financial arithmetic and eligibility services, conversation/goal/capability models, bounded orchestrator, SQLite persistence, API role/ownership/CSRF/rate-limit controls, React UI/charts, generic inline car SVG and synthetic authentication regression tests. Internal `StraussDrive` namespaces and `HackathonData` type names remain for code continuity; they do not imply use of supplied challenge data or an official endorsement.
 
-This classification identifies project implementation; it does not independently prove legal title. The owner must confirm rights in the code/artwork and permission from any contributors before licensing/publication. Git metadata and possession of source are not proof of exclusive ownership.
+The owner confirmed on 21 November 2026 that all project code was personally developed with AI-tool assistance, including Codex, and no other human developers contributed. This declaration resolves the human-contributor question; third-party dependencies remain separately licensed. Separate contractual publication restrictions, if applicable, are addressed in `LICENSING.md`; Git metadata alone is not proof of legal title.
 
 ## Newly authored for this edition
 
@@ -18,7 +18,7 @@ The retained generic mechanisms resemble the original problem domain; the rows, 
 
 All supplied PDF/Excel/JSON/government CSV artifacts; source-specific import/rules parsers; original employee records, benchmark answers, source hashes, evaluation transcripts and historical result reports; old screenshots; cloud/deployment files; private-repository documentation and Git history; production URLs; secrets, databases and signing keys; external AI HTTP integration and paid/live evaluation runners.
 
-No organizer permission has been assumed. Excluding the source documents does not establish ownership of every retained code contribution; that is a separate owner confirmation.
+No permission to redistribute organizer documents or datasets has been assumed; none are included. The owner's code-authorship declaration is recorded separately from any applicable contract terms.
 
 ## Third-party components
 

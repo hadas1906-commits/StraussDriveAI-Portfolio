@@ -418,7 +418,7 @@ export function AdvisorChat({ compact = false }: { compact?: boolean }) {
           <div>
             <Bot size={23} />
             <div>
-              <strong>יועץ הרכב של StraussDrive</strong>
+              <strong>יועץ הרכב — Portfolio</strong>
               <span>
                 {profile === null
                   ? "פרופיל אישי חדש — נתונים פרטיים לשיחה"
@@ -687,7 +687,7 @@ export function AdvisorChat({ compact = false }: { compact?: boolean }) {
                 value={text}
                 maxLength={4000}
                 rows={2}
-                placeholder="למשל: אם אעבור ל־MG4, מה יקרה לנטו שלי?"
+                placeholder="למשל: אם אעבור ל־PULSE, מה יקרה לנטו שלי?"
                 disabled={busy || !view}
                 onChange={(e) => setText(e.target.value)}
                 onKeyDown={(e) => {

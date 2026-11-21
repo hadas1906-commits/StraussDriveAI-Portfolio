@@ -16,20 +16,24 @@ This is a scoped heuristic scan, not an independent penetration test, legal cert
 
 The final scoped scan reviewed 91 tracked release files, including four PNG screenshots with English OCR. No matching secret/privacy blocker was found; two credential-assignment paths were identified as synthetic test fixtures. There is no Git remote. Build/test/reference/browser results and the verified local launcher are recorded in `VALIDATION.md`. This is a fresh local preparation history only; it uses an explicit placeholder author (`portfolio@example.invalid`) rather than exposing an original private commit email. Before publication, set the owner's chosen public Git identity and optionally re-author the local preparation commit.
 
-## Remaining publication blockers
+## Final clearance status — 21 November 2026
 
-1. Owner confirmation of licensing rights in retained implementation/artwork, contributor permissions and any applicable challenge participation terms. No such title can be established from Git metadata alone.
-2. Explicit approval to apply the proposed MIT license to owner-controlled files. No project-code license is applied yet; third-party terms remain separate and must not be overwritten.
-3. Owner review of the exact staged files/screenshots and explicit approval to create/publish the new portfolio repository. Do not alter the original repository visibility.
+**Technical/source-distribution review: PASS. Overall publication clearance: CONDITIONAL, not yet unconditional. Publication itself remains explicitly unauthorized.**
 
-Organizer data-redistribution permission is not assumed or needed for files that have been excluded. This does not override a separate contract about code ownership/publication. Dependency notices cover the locked inventory and available installed license texts, with scope limits documented in `LICENSING.md`; redistributing dependency binaries or containers requires reviewing those artifacts separately.
+- The owner confirms sole human authorship with AI-tool assistance, including Codex. No other human contributor permission is identified as outstanding on that declaration.
+- No MIT or other project-code license is applied. Source-visible/no-project-license publication is the chosen approach, with GitHub viewing/forking terms and third-party licenses preserved.
+- The reviewed distribution contains original fictional examples and fresh screenshots. Supplied challenge/government materials, production URLs, external AI integration, credentials and private history remain excluded.
+- No code-publication restriction was identified in the supplied challenge instructions. No separate participation/employment/IP agreement was supplied. **The outstanding contractual condition is confirmation that no applicable separate agreement restricts publication of the retained implementation/artwork, or resolution of such a restriction if one exists.** Sole authorship does not answer that separate contractual question. This is not a finding that organizer permission is inherently required.
+- Explicit approval to create/publish the final reviewed portfolio is still required. No public repository, remote, push, visibility change or deployment has been performed.
+
+Third-party notice preservation is sufficient for the reviewed source-only package; no dependency trees, font binaries or compiled application distribution are committed. The local build emits preserved notices alongside its font/JavaScript output. Optional uninstalled platforms and future binary/container redistribution remain outside this source-only clearance.
 
 ## Exact publishing steps — execute only after explicit approval
 
-1. Confirm ownership/contributor rights and license choice. Add the approved standard MIT `LICENSE` with the correct copyright holder/year and scope excluding third-party materials. Update the pending-status statements in README and licensing/release documents, then review and commit those changes locally.
-2. From this directory, inspect `git status`, `git log --all --oneline`, `git remote -v`, `git ls-files`, screenshots, `data/portfolio-demo.json` and `THIRD_PARTY_NOTICES.md`. The local history must contain only this edition; no private-project history or remote may appear.
+1. Rely on the recorded sole-human-authorship declaration for the contributor question; resolve the remaining separate-contract condition described above. Keep the README no-project-license notice and all third-party notices. Do not add an MIT LICENSE, license badge, or blanket claim over upstream materials. No custom restrictive license is added.
+2. Review the finalized local commit and choose the public Git identity before publication. The preparation history currently uses an explicit placeholder identity, not a private personal email. From this directory, inspect `git status`, `git log --all --oneline`, `git remote -v`, `git ls-files`, screenshots, `data/portfolio-demo.json` and `THIRD_PARTY_NOTICES.md`. The local history must contain only this edition; no private-project history or remote may appear.
 3. Re-run the commands in `docs/VALIDATION.md`, `git diff --check` and `python3 tools/release_audit.py`. Resolve any findings. Do not stage ignored/generated/private files or use `git add -f`.
-4. After approval to publish this exact edition, create **only** `hadas1906-commits/StraussDriveAI-Portfolio` through GitHub, selecting Public, with no generated README/license/gitignore. Alternatively, run the following **only after approval** from this directory:
+4. Request and receive explicit owner approval for publishing the exact reviewed edition without a project-code license. Only after that approval, create **only** `hadas1906-commits/StraussDriveAI-Portfolio` through GitHub, selecting Public, with no generated README/license/gitignore; select no license. Alternatively, run the following **only after approval** from this directory:
 
    ```sh
    gh repo create hadas1906-commits/StraussDriveAI-Portfolio --public --source=. --remote=origin --push

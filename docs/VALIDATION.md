@@ -1,6 +1,6 @@
 # Validation of the fictional portfolio edition
 
-These are new runs against `data/portfolio-demo.json`; no private-project test results are reused. The source runtime contains no HTTP AI adapter and registers the deterministic planner unconditionally. No paid provider or cloud service was called. Date: 20 November 2026 (Asia/Jerusalem).
+These are new runs against `data/portfolio-demo.json`; no private-project test results are reused. The source runtime contains no HTTP AI adapter and registers the deterministic planner unconditionally. No paid provider or cloud service was called. Initial validation: 20 November 2026; final rerun: 21 November 2026 (Asia/Jerusalem).
 
 | Check | Command | Actual result |
 |---|---|---|
@@ -37,3 +37,17 @@ The reference authoring tool is independent Python Decimal code, not the applica
 All planning is deterministic or scripted; no live-model accuracy claim is made. Browser tests are emulation in Chromium, not physical devices or other engines. Automated axe checks do not establish complete accessibility. This is not a penetration test, production payroll validation or enterprise readiness review. The .NET test runner emits an informational temporary-artifact-directory message; it does not skip tests.
 
 Review `docs/RELEASE_REVIEW.md` and run `python3 tools/release_audit.py` against the final staged/tracked files before publication. Dependencies require network during initial restore/install; normal demo interactions require no external provider or account. This review does not check remote GitHub/cloud settings because no public repository or deployment is created.
+
+## Recruiter presentation and no-license review
+
+The owner chose public viewing without a project-code license; MIT remains unapplied. Licensing/README/release instructions were updated locally without publication. Four screenshots were visually reviewed. The advisor's clipped/oversized capture and the comparison chart's premature capture were corrected, and an old vehicle placeholder was replaced by the fictional PULSE example. No financial or authentication behavior changed. Frontend build and all five desktop workflow tests passed again for this review; the advisor capture was then checked separately after its framing adjustment. The previous backend/mobile results above are retained evidence, not claimed as newly rerun for this presentation/documentation change.
+
+## Finalization — 21 November 2026
+
+The owner confirmed sole human authorship with AI-tool assistance, including Codex; this declaration is recorded in `LICENSING.md`. The project remains source-visible without a project-code license. Third-party notices are unchanged and the built notices file matches the tracked source byte-for-byte.
+
+Fresh final runs: .NET build passed with zero warnings/errors; 57 backend tests passed with zero failed/skipped; 11 frontend tests passed; frontend build passed; 50 independent financial-reference field checks matched with zero mismatches; all 10 desktop/mobile browser workflows passed. Browser command used `CI=1 PORTFOLIO_API_PORT=5230 PORTFOLIO_UI_PORT=5231 npm --prefix frontend run test:e2e`. No live provider or paid service was called.
+
+All four screenshots were visually reviewed in the recruiter review; the final browser run regenerated them from the same fictional implementation. Advisor framing uses a local multi-vehicle summary; the comparison capture waits for its chart. The README links resolve, the fictional/deterministic labels are accurate, and there is no hosted production link. The 91-file secret/privacy scan passed, including English OCR of four PNGs. The reachable preparation-history blobs were separately checked for common secret patterns and forbidden source artifacts; no matches were found. Original source artifacts had no hash matches in the release file set. No personal profile identifiers, original datasets or application-state files are distributed.
+
+The original worktree remains clean. The separate portfolio has no remote, no project-code LICENSE and no copied private history. Final local changes are committed for review, not published. Technical/source-distribution checks pass; contractual publication clearance remains conditional as explained in `RELEASE_REVIEW.md` because no separate participation/employment/IP agreement was available to review. No requirement for blanket MIT licensing or automatic organizer consent is asserted.

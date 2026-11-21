@@ -1,18 +1,39 @@
-# Licensing review — proposal, not a license grant
+# Public viewing without a project-code license
 
-## Project code
+## Current decision
 
-No project-code LICENSE or explicit redistribution grant was found in the source repository. The owner requested this separate portfolio, but that does not prove exclusive title, contributor consent, employment/IP terms or organizer terms. No project-code license has been applied here and publication remains pending approval.
+The owner wants recruiter access to source, screenshots and documentation, without a broad MIT reuse grant. **No MIT or other project-code license is applied or planned for this publication.** Public availability is not an open-source license. Publication remains subject to a separate explicit owner approval.
 
-**Recommended license: MIT** for the implementation and newly authored fictional examples, once the owner confirms the right to license them. MIT is a concise permissive license suitable for recruiter review and reuse, with copyright/permission notice retention and warranty disclaimer. It offers no separate explicit patent grant; consider Apache-2.0 if that is a project requirement.
+No project-code LICENSE or explicit redistribution grant was found in the source repository. The retained implementation is owner-supplied project code; Git possession and commit authorship cannot independently establish legal title.
 
-Before applying MIT, confirm:
+## Contributor review
 
-1. The owner has redistribution/licensing rights in retained code, inline artwork and the new dataset, including contributor or employer rights where applicable.
-2. No binding challenge terms restrict publication of independently implemented code. Challenge-provided materials are excluded regardless.
-3. The desired copyright holder/year and the final license choice. A repository made readable without a license does not automatically grant open-source reuse rights.
+On 21 November 2026, the owner explicitly confirmed that all project code was developed personally with assistance from AI tools, including Codex, and that no other human developers contributed code. This resolves the previously unconfirmed human-contributor question on the basis of the owner's declaration. The two historical Git author identities are not treated as evidence of two human contributors or outstanding contributor permissions.
 
-After explicit approval, add the standard MIT text as `LICENSE` for owner-controlled files and an ownership/scope notice excluding third-party materials. Do not overwrite, remove or claim ownership of upstream notices. This document is a proposal only.
+This records the owner's statement; it is not an independent legal determination of copyright title or of the copyrightability of AI-assisted material. Third-party dependencies remain separately licensed and are not claimed as owner-authored implementation.
+
+### Remaining redistribution check
+
+The supplied challenge instructions request source code as a submission deliverable, but no explicit assignment of independently written code or restriction on its public publication was identified in that document. Challenge datasets/documents are excluded, so no redistribution permission for those excluded files is being asserted or needed for this edition.
+
+No separate participant agreement, employment/IP agreement or other publication contract was supplied. Its existence/applicability cannot be inferred from sole authorship. **Remaining contractual clearance condition:** the owner must confirm that no separate applicable agreement restricts public publication of the retained code/artwork, or resolve a restriction if one exists. This does not establish that organizer approval is always required. If no such agreement applies, no additional organizer permission has been identified as necessary for the reviewed source-only edition.
+
+## What no license means
+
+- Copyright protections generally remain with the respective rightsholders. Merely making a repository public does not grant broad rights to reuse, modify, commercially exploit or redistribute the owner-controlled implementation. Applicable legal exceptions still exist.
+- GitHub's terms apply separately. Public repositories can be viewed and forked using GitHub functionality under those terms; no-license status is not a promise that nobody may fork, download or retain a copy. Public material is technically copyable and making it private later cannot recall copies already obtained.
+- Public source is **source-visible**, not open source under a recognized open-source license. Do not add an MIT badge, SPDX MIT tag, permissive LICENSE template or claim that the entire repository is open source.
+- Recruiters can inspect the portfolio. The absence of an explicit license can discourage reuse and makes permission for activities beyond platform viewing/forking less clear. Local-install instructions describe technical capability, not a new general license. If an express, narrowly scoped evaluation/run permission is later desired, approve that separately instead of assuming it is granted here.
+- A no-license decision does not eliminate obligations in font/icon/dependency licenses and does not permit public distribution of code owned by another contributor without sufficient permission. No project-wide reservation can override upstream rights in those components.
+
+The README documents this status without claiming that all third-party materials belong to the owner. A custom restrictive license is not added. If contributor ownership or contract terms are uncertain, obtain specific permission or remove/reimplement the affected material before publication. This review is practical release guidance, not a legal determination of ownership.
+
+## Reference points
+
+- [GitHub: licensing a repository](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)
+- [GitHub Terms of Service: license grant to other users](https://docs.github.com/en/site-policy/github-terms/github-terms-of-service#5-license-grant-to-other-users)
+
+Review the current platform terms before publication; these links do not constitute a project-code license grant.
 
 ## Third-party obligations
 
@@ -24,4 +45,4 @@ After explicit approval, add the standard MIT text as `LICENSE` for owner-contro
 - **MPL toolchain components:** preserve applicable notices and source-availability obligations if redistributing covered binaries or modifying covered files; this edition does not vendor or modify those package sources.
 - **CC-BY toolchain data:** retain upstream attribution/license material if redistributing that data. No such dataset is authored by this project.
 
-The screenshot UI uses these third-party components; it does not turn their license into MIT. Existing JavaScript banners are retained, with the additional notices file. Before distributing binaries/containers or changing dependencies, review the exact resulting distribution again; this source-only review is not an exhaustive legal opinion or external compliance certification.
+The screenshot UI uses these third-party components; their upstream licenses remain unchanged. Existing JavaScript banners are retained, with the additional notices file. Before distributing binaries/containers or changing dependencies, review the exact resulting distribution again; this source-only review is not an exhaustive legal opinion or external compliance certification.

@@ -21,7 +21,20 @@ test("fictional family calculation, follow-up and reload are grounded locally",a
  await send(page,"מה חלקי בפער התקציב?");await expect(page.locator(".chat-message.assistant").last()).toContainText("800");
  await page.reload();await expect(page.locator(".chat-calculation")).toHaveCount(2);
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBe(true);
- if(info.project.name==="desktop"){await mkdir("../docs/screenshots",{recursive:true});await page.screenshot({path:"../docs/screenshots/advisor.png",fullPage:true});}
+ if(info.project.name==="desktop"){
+  await mkdir("../docs/screenshots",{recursive:true});
+  await page.setViewportSize({width:1440,height:1200});
+  await send(page,"השוואה מול HARBOR מול LANTERN");
+  await expect(page.locator(".chat-message.assistant").last().locator(".comparison-summary")).toBeVisible();
+  await page.evaluate(()=>{
+   const feed=document.querySelector(".message-feed") as HTMLElement;
+   const messages=feed.querySelectorAll(".chat-message.employee");
+   const last=messages[messages.length-1] as HTMLElement;
+   feed.scrollTop += last.getBoundingClientRect().top-feed.getBoundingClientRect().top-12;
+   window.scrollTo(0,0);
+  });
+  await page.screenshot({path:"../docs/screenshots/advisor.png",fullPage:false});
+ }
 });
 test("original waiver reference and blocked mandatory-car request",async({page})=>{
  await select(page,"DEMO-P03");await page.goto("/advisor");await send(page,"אני רוצה לוותר על רכב");
@@ -35,7 +48,7 @@ test("catalog, salary comparison and screenshots use only original fictional dat
  if(info.project.name==="desktop")await page.screenshot({path:"../docs/screenshots/dashboard.png",fullPage:true});
  await page.goto("/catalog");await expect(page.getByText("PULSE",{exact:true}).first()).toBeVisible();
  await page.goto("/compare?car=DEMO-102");await expect(page.locator(".page-heading")).toBeVisible();await expect(page.getByText(/10,138/).first()).toBeVisible();
- if(info.project.name==="desktop")await page.screenshot({path:"../docs/screenshots/comparison.png",fullPage:true});
+ if(info.project.name==="desktop"){await expect(page.locator(".recharts-surface").first()).toBeVisible(); await expect(page.locator(".recharts-rectangle").first()).toBeVisible(); await page.screenshot({path:"../docs/screenshots/comparison.png",fullPage:true});}
  const a11y=await new AxeBuilder({page}).withTags(["wcag2a","wcag2aa"]).analyze();expect(a11y.violations).toEqual([]);
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBe(true);
 });

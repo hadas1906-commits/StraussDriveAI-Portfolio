@@ -5,7 +5,7 @@
 **English:** A self-contained, local portfolio demonstrating vehicle-benefit decisions through deterministic calculations, a conversational workflow and bounded tool planning. Every profile, vehicle, policy and financial reference is newly authored fiction. No OpenAI key, Railway access or paid account is required.
 
 > **Deterministic demo — no live AI. / הדגמה דטרמיניסטית — ללא מודל חי.**
-> This is an independent portfolio, not an official Strauss product or a payroll service. No challenge documents, government datasets, production links or original Git history are included. Public-release and project-code licensing approval remain pending; see [licensing review](docs/LICENSING.md).
+> This is an independent portfolio, not an official Strauss product or a payroll service. No challenge documents, government datasets, production links or original Git history are included. Prepared for recruiter review; publication approval remains pending. No project-code license is granted; see [rights and contributor review](docs/LICENSING.md).
 
 [עברית](#עברית--סקירת-הפרויקט) · [English](#english--project-overview) · [Run locally / הפעלה](#local-installation--התקנה-מקומית) · [Tests / בדיקות](#testing--בדיקות) · [Release review](docs/RELEASE_REVIEW.md)
 
@@ -115,8 +115,14 @@ Security includes separate signed demo-role cookies, ownership checks, CSRF defe
 ## Source, licensing and publication / מקור, רישוי ופרסום
 
 - [Provenance and exclusions](docs/PROVENANCE.md): retained project implementation versus excluded supplied materials.
-- [Licensing review and MIT proposal](docs/LICENSING.md): project ownership confirmation is still required; **no project-code license has been applied**.
+- [Rights and contributor review](docs/LICENSING.md): public viewing without a project-code license; sole human authorship with AI assistance is confirmed; any separate contractual publication restrictions still require clearance.
 - [Third-party notices](THIRD_PARTY_NOTICES.md): upstream terms are preserved, not relicensed.
 - [Release review and publication checklist](docs/RELEASE_REVIEW.md): review the fresh history and wait for explicit owner approval before creating or publishing a repository.
 
 No public repository, remote, hosted demo, account integration or deployment is created by preparing this edition.
+
+### Rights / זכויות
+
+**English:** This portfolio is intended for public recruiter inspection. No MIT or other project-code license is granted for owner-controlled implementation, documentation, artwork or fictional examples. Public visibility does not itself grant broad reuse, modification or redistribution rights. GitHub platform terms and applicable legal exceptions still apply. Third-party components retain their own licenses, listed in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Installation instructions describe technical capability and are not a general reuse license.
+
+**עברית:** הפורטפוליו מיועד לעיון של מגייסים. לא ניתן רישיון MIT או רישיון כללי אחר לקוד, לתיעוד, לאיורים ולדוגמאות שבשליטת בעלי הזכויות בפרויקט. פרסום לצפייה אינו מעניק כשלעצמו זכויות שימוש חוזר, שינוי או הפצה רחבות. תנאי GitHub והחריגים הקבועים בדין ממשיכים לחול; רכיבי צד שלישי נשארים כפופים לרישיונות שלהם. הוראות ההתקנה מתארות יכולת טכנית ואינן רישיון שימוש כללי.
