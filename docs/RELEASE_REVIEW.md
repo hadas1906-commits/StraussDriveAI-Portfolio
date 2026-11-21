@@ -1,4 +1,14 @@
-# Public portfolio release review — pending owner approval
+# Release history and publication record
+
+## Current published state
+
+The owner explicitly authorized publication of the reviewed portfolio. The public repository is [hadas1906-commits/StraussDriveAI-Portfolio](https://github.com/hadas1906-commits/StraussDriveAI-Portfolio), initially published at [`b045bfe`](https://github.com/hadas1906-commits/StraussDriveAI-Portfolio/commit/b045bfec93c97c33044a3d845fc9294d188843fd). Public README, four screenshots, notices and representative source files were verified after that push. Only portfolio `main` was pushed; the original private repository and Railway were not changed.
+
+The project remains source-visible without a project-code license. Owner authorization is recorded; it is not an independent legal determination about any separate agreements that were not supplied. Third-party license obligations remain unchanged. See `LICENSING.md` for the current policy and `VALIDATION.md` for dated evidence.
+
+## Historical pre-release record
+
+**Everything below records the preparation review before publication.** Statements such as “no remote,” “not published,” “pending approval” and the repository-creation commands describe that historical stage. They are not current status or instructions to recreate the existing public repository. The later owner authorization resolved the publication-approval step; the technical and legal scope limits remain part of the audit record.
 
 ## Scope and boundaries
 

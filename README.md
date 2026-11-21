@@ -1,68 +1,137 @@
 # StraussDriveAI-Portfolio
 
-**עברית:** מהדורת פורטפוליו עצמאית להדגמה מקומית של ייעוץ הטבות רכב ושינוי בנטו. כל האנשים, הרכבים, המדיניות וטבלאות המס במהדורה זו הם יצירה פיקטיבית חדשה. אין צורך בחשבון OpenAI, Railway או שירות בתשלום.
+**English:** A vehicle-benefit decision application that turns “What happens to my take-home pay?” into a server-validated comparison. It combines a C# deterministic financial engine, a React/TypeScript interface, a bounded conversational workflow and a representative handoff process.
 
-**English:** A self-contained, local portfolio demonstrating vehicle-benefit decisions through deterministic calculations, a conversational workflow and bounded tool planning. Every profile, vehicle, policy and financial reference is newly authored fiction. No OpenAI key, Railway access or paid account is required.
+**עברית:** אפליקציה לבחינת הטבות רכב, שהופכת את השאלה ״מה יקרה לנטו שלי?״ להשוואה שהשרת מחשב ומאמת. המימוש משלב מנוע כספי דטרמיניסטי ב-C#, ממשק React/TypeScript, תהליך שיחה מוגבל בכלים והעברת בקשות לנציג.
 
-> **Deterministic demo — no live AI. / הדגמה דטרמיניסטית — ללא מודל חי.**
-> This is an independent portfolio, not an official Strauss product or a payroll service. No challenge documents, government datasets, production links or original Git history are included. Prepared for recruiter review; publication approval remains pending. No project-code license is granted; see [rights and contributor review](docs/LICENSING.md).
+> **Independent fictional demo · Deterministic advisor · No live LLM**<br>
+> **הדגמה עצמאית עם נתונים פיקטיביים · יועץ דטרמיניסטי · ללא מודל שפה חי**
+>
+> This public portfolio is not an official Strauss or Microsoft product. Local execution needs no OpenAI key, paid hosting or external account. Installing public dependencies requires network access; download or connectivity costs depend on your environment.
 
-[עברית](#עברית--סקירת-הפרויקט) · [English](#english--project-overview) · [Run locally / הפעלה](#local-installation--התקנה-מקומית) · [Tests / בדיקות](#testing--בדיקות) · [Release review](docs/RELEASE_REVIEW.md)
+I developed the project code with assistance from AI tools, including Codex; no other human developers contributed code. Third-party libraries, icons and fonts retain their own licenses.
 
-## עברית — סקירת הפרויקט
+פיתחתי את קוד הפרויקט בסיוע כלי AI, ובהם Codex, ללא תרומת קוד של מפתחים אנושיים נוספים. ספריות, סמלים וגופנים של צד שלישי כפופים לרישיונות שלהם.
 
-המערכת עונה על שאלה עסקית פשוטה עם חישוב מורכב מאחוריה: ״מה יקרה לנטו שלי אם אחליף רכב או אוותר עליו?״ היא מציגה בסיס נוכחי מול חלופות, בודקת זכאות ומסבירה השתתפות, מסים והטבות. השרת הוא הסמכות הכספית; הממשק והשיחה אינם ממציאים סכומים.
+**Documented portfolio verification:** 57 backend tests · 11 frontend tests · 50 financial field checks · 10 desktop/mobile browser tests. These are the recorded 21 November 2026 results, not new test runs for this README update. [Evidence and scope](docs/VALIDATION.md).
 
-### יכולות
+**English navigation:** [Screenshots](#screenshots) · [Engineering](#engineering) · [Architecture](#architecture) · [Walkthrough](#walkthrough) · [Setup](#setup) · [Tests](#tests) · [Limitations and rights](#boundaries)
 
-- ממשק עברי RTL למחשב ולנייד: סקירה, קטלוג, השוואה, סימולטור, שיחה, מעבדת תרחישים ומסך נציג.
-- מנוע `decimal` דטרמיניסטי, חישוב גילום, הסברים ומקור נתונים עם חתימת SHA-256.
-- השוואת כמה חלופות מול בסיס יחיד, מסלול משפחתי, חשמלי וויתור לפי עיסוק.
-- שמירת שיחות ותרחישים פרטיים ב-SQLite; שאלות המשך, אישור שינוי עובדות והעברה מפורשת לנציג.
-- מתכנן דטרמיניסטי עם ממשק ספק ניתן להחלפה. סכימות כלים, אימות מטרות וצעדים, הגבלת פעולות ומניעת ביצוע כפול נשמרו. תוכניות native מתוסרטות נבדקות ללא רשת.
-- עוגיות חתומות נפרדות לעובד ולנציג, בדיקות בעלות, CSRF, הגבלת קצב וביטול מפגש. שער Basic אופציונלי נבדק עם אישורי בדיקה בלבד.
+**ניווט בעברית:** [צילומי מסך](#screenshots) · [יכולות והחלטות הנדסיות](#engineering) · [ארכיטקטורה](#architecture) · [הדגמה קצרה](#walkthrough) · [התקנה והפעלה](#setup) · [בדיקות](#tests) · [מגבלות וזכויות](#boundaries)
 
-### תסריט קצר למגייסים
-
-1. בחרו **פרופיל הדגמה בטא** ובשיחה כתבו: `השוואה משפחתית מול HARBOR`.
-2. צפו לנטו פיקטיבי **13,074 מול 12,085**, הפרש **−989** וחלק עובד בפער **800**. שאלו: `מה חלקי בפער התקציב?` ורעננו.
-3. אצל אותו פרופיל בקשו `אני רוצה לוותר על רכב` — התפקיד הפיקטיבי מחייב רכב ולכן הבקשה נחסמת.
-4. עברו ל**פרופיל הדגמה גמא** ולשיחה חדשה, ובקשו ויתור: **16,778 מול 18,470**, שינוי **+1,692**.
-5. במעבדת התרחישים בחרו חלופה, חשבו ושמרו. הנתונים המקוריים אינם משתנים.
-6. לפנייה אנושית: אחרי בחירת חלופה שלחו `נציג לאישור השתתפות`, אשרו את ההעברה, עברו למרכז הנציגים ולחצו על כניסת הדגמה ללא קוד בהפעלה המקומית. ענו וחזרו לשיחת העובד. אין זו הזדהות ארגונית.
-
-### מגבלות
-
-טבלאות המס הן המצאה לימודית לשנת 2099; אינן חוקי מס של מדינה כלשהי ואינן כללי שטראוס. הסכומים מוצגים ביחידות הדגמה בסימון ₪, ללא תוקף שכר אמיתי. אין שירות AI חי, OCR, חיבור HR/שכר, SSO או מוכנות לייצור. השיחה מבינה אוצר ביטויים מוגבל — השתמשו בדוגמאות המתועדות. הפרדה בחשבון הדגמה אינה זיהוי עובד אמיתי; אין להזין מידע אישי. מפתחות ועוגיות מקומיים נשמרים ללא הצפנה ארגונית. הבדיקות בדפדפן הן Chromium במחשב ובאמולציית נייד, לא בדיקה בכל מכשיר.
-
-## Architecture / ארכיטקטורה
-
-```mermaid
-flowchart LR
-    UI[React + TypeScript / Hebrew RTL] --> API[ASP.NET Core API]
-    API --> Conversation[Conversation state + goal validation]
-    Planner[Local deterministic planner / no network] --> Conversation
-    Conversation --> Tools[Allowlisted capability orchestrator]
-    Tools --> Domain[C# decimal financial engine]
-    Domain --> Data[Original fictional JSON / year 2099]
-    API --> Store[(SQLite + ownership / audit)]
-    Rep[Representative workflow] --> API
-```
-
-**Technologies:** .NET 10, ASP.NET Core, C#, React 19, TypeScript, Vite, SQLite, xUnit, Vitest, Playwright, axe-core, Tailwind CSS, Recharts, Lucide and locally bundled Heebo fonts. Third-party licenses remain separate; [notices](THIRD_PARTY_NOTICES.md) include their terms.
+<a id="screenshots"></a>
 
 ## Screenshots / צילומי מסך
 
-All screenshots were captured locally from this edition using fictional profiles. They do not link to a hosted service or consume an account.
+All four captures come from this clean fictional edition. They show invented profiles and financial examples, not real payroll, official challenge assets or a hosted production service. Expand each view and click the image to inspect it at full size.
 
-![Original fictional dashboard / סקירה פיקטיבית](docs/screenshots/dashboard.png)
-![Deterministic advisor / יועץ דטרמיניסטי](docs/screenshots/advisor.png)
-![Comparison and explanations / השוואה ופירוט](docs/screenshots/comparison.png)
-![Private fictional scenarios / תרחישים פיקטיביים](docs/screenshots/scenarios.png)
+כל ארבעת הצילומים נלקחו ממהדורת הפורטפוליו הפיקטיבית בלבד. פתחו כל תצוגה ולחצו על התמונה לצפייה בגודל מלא.
 
-## Local installation / התקנה מקומית
+<details open>
+<summary><strong>1. Dashboard / סקירה אישית</strong></summary>
 
-Prerequisites / דרישות: **.NET 10 SDK** (see `global.json`), **Node.js 22+**, npm, and **Python 3.10+** for the launcher/reference authoring tool. Installation restores public packages and therefore requires network access; the running demo needs no external account or provider. Commands work from the repository root; `python3` may be `python` on your system.
+A fictional employee baseline, eligibility budget and available vehicles in a Hebrew RTL interface. / מצב נוכחי של פרופיל פיקטיבי, תקציב זכאות ורכבים לבחירה בממשק עברי.
+
+[![Fictional Alpha profile dashboard with current net, eligibility budget and ORBIT/PULSE vehicle cards](docs/screenshots/dashboard.png)](docs/screenshots/dashboard.png)
+
+</details>
+
+<details>
+<summary><strong>2. Deterministic advisor / יועץ דטרמיניסטי</strong></summary>
+
+A local multi-vehicle conversation compares HARBOR and LANTERN with the current arrangement, with explicit no-AI labeling and expandable evidence. / השוואה בשיחה מול המצב הנוכחי, סימון מפורש שאין קריאת AI ופירוט הניתן לפתיחה.
+
+[![Deterministic Hebrew advisor comparing fictional MEADOW, HARBOR and LANTERN with calculated net differences](docs/screenshots/advisor.png)](docs/screenshots/advisor.png)
+
+</details>
+
+<details>
+<summary><strong>3. Comparison and explanation / השוואה והסבר</strong></summary>
+
+ORBIT → PULSE: displayed net changes from 9,945 to 10,138 demonstration units, with a waterfall chart and salary breakdown. / שינוי פיקטיבי של 193 יחידות נטו, לצד תרשים ופירוט רכיבי השכר.
+
+[![ORBIT versus PULSE comparison showing fictional net values, a 193-unit increase, waterfall and salary breakdown](docs/screenshots/comparison.png)](docs/screenshots/comparison.png)
+
+</details>
+
+<details>
+<summary><strong>4. Scenario Lab / מעבדת תרחישים</strong></summary>
+
+A hypothetical salary/vehicle scenario saved to the local demo account, without changing its imported baseline. / תרחיש היפותטי השמור בחשבון ההדגמה המקומי, בלי לשנות את פרופיל המקור.
+
+[![Scenario Lab with fictional salary inputs and a privately saved PULSE comparison against the Alpha baseline](docs/screenshots/scenarios.png)](docs/screenshots/scenarios.png)
+
+</details>
+
+<a id="engineering"></a>
+
+## Capabilities and engineering decisions / יכולות והחלטות הנדסיות
+
+| Capability / יכולת                            | Implementation and boundary / מימוש וגבול אחריות                                                                                                                                                                                                                                           |
+| --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Deterministic finance / חישוב כספי            | Server-side C# `decimal` arithmetic, progressive fictional tax tables, electric gross-up and separate display rounding. React displays results; it does not calculate payroll. / החישוב בשרת; עיגול לתצוגה אינו משנה את החישוב הפנימי.                                                     |
+| Authoritative eligibility / זכאות בשרת        | Occupation, group, budget, family policy and waiver rules are checked by the backend. A conversational claim cannot grant entitlement. / טענה בשיחה אינה משנה זכאות מאומתת.                                                                                                                |
+| Bounded conversation / שיחה עם כלים מוגבלים   | The local deterministic planner recognizes limited vocabulary. Allowlisted tools, structured goals, validated steps and duplicate-execution protections constrain the workflow. The provider interface is architectural; no external LLM adapter is distributed. / ממשק הספק אינו מודל חי. |
+| Comparisons and scenarios / השוואות ותרחישים  | Compare alternatives against one current baseline; explore hypothetical salary inputs in the simulator and Scenario Lab. Saved Lab inputs are recalculated and bound to their source fingerprint. / נתוני תרחיש אינם משנים את המקור.                                                       |
+| Representative process / תהליך נציג           | Separate confirmation before creating a handoff; a role-separated representative can respond, record participation and resume the employee workflow. / אישור פנייה מפורש ותשובת נציג מתועדת.                                                                                               |
+| Persistence and explanations / התמדה והסברים  | SQLite stores conversations, facts, tickets, audit events and owned scenarios. Decision evidence exposes the applicable rules, assumptions and SHA-256 source fingerprint. / שמירת הקשר והצגת מקור והנחות.                                                                                 |
+| Tested access boundaries / גבולות גישה נבדקים | Separate signed role cookies, ownership checks, CSRF header checks, rate limits and session revocation. These protect a fictional demo, not an enterprise identity system. / הרשאות הדגמה אינן הזדהות ארגונית.                                                                             |
+
+The [fictional fixture](data/portfolio-demo.json) contains six invented vehicles, five profiles and three occupations. Its year-2099 policy requires three eligible children up to age 20 for the family route, splits its positive budget gap **40% employee / 60% employer**, and provides a **175-unit net electric benefit**. These are newly authored examples, not renamed challenge rows or real tax rules. [Provenance](docs/PROVENANCE.md).
+
+נתוני ההדגמה מקוריים ופיקטיביים. שנת 2099, הסכומים והמדיניות נועדו להמחשת המנגנון בלבד; הם אינם כללי שטראוס או בסיס לתלוש שכר אמיתי.
+
+<a id="architecture"></a>
+
+## Architecture and technologies / ארכיטקטורה וטכנולוגיות
+
+```mermaid
+flowchart LR
+    UI["React + TypeScript / Hebrew RTL"] --> API["ASP.NET Core API"]
+    API --> Conversation["Conversation state + goal validation"]
+    Planner["Local deterministic planner / no network"] --> Conversation
+    Conversation --> Tools["Allowlisted capability orchestrator"]
+    Tools --> Domain["C# decimal financial engine"]
+    Domain --> Data["Original fictional JSON / year 2099"]
+    API --> Store[("SQLite / ownership and audit")]
+    Rep["Representative workflow"] --> API
+```
+
+| Layer / שכבה                   | Technologies / טכנולוגיות                                                        |
+| ------------------------------ | -------------------------------------------------------------------------------- |
+| Backend and data / שרת ונתונים | .NET 10, ASP.NET Core, C#, SQLite, original JSON loader                          |
+| Frontend / ממשק                | React 19, TypeScript, Vite, Tailwind CSS, Recharts                               |
+| Verification / בדיקות          | xUnit, Vitest, Playwright, axe-core; independent Python Decimal reference oracle |
+| UI assets / נכסי ממשק          | Lucide icons, locally bundled Heebo fonts, generic project SVG car artwork       |
+
+The JSON loader supplies validated data to the existing domain services. The conversational layer chooses bounded actions; the engine and backend enforce money and eligibility. Persistence is local. Structured/native-shaped plans are exercised with scripted providers, not a live API. No OpenAI request or cloud deployment is part of this edition.
+
+שכבת הנתונים מספקת קלט למנוע; שכבת השיחה בוחרת פעולות מוגבלות; השרת קובע זכאות וסכומים. האחסון מקומי, ואין רכיב שמפעיל ספק AI חיצוני.
+
+<a id="walkthrough"></a>
+
+## Short recruiter walkthrough / הדגמה קצרה למגייסים
+
+The interface and supported prompts are Hebrew. Use the exact examples below to explore the deterministic vocabulary. / הממשק בעברית; הדוגמאות הבאות מדגימות את אוצר הביטויים הנתמך.
+
+| Step / שלב                          | Action and expected behavior / פעולה ותוצאה צפויה                                                                                                                                                                                                         |
+| ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1. Family comparison / מסלול משפחתי | Select **פרופיל הדגמה בטא** and send `השוואה משפחתית מול HARBOR`. Expect **13,074 → 12,085**, monthly difference **−989**, employee gap share **800**. / בחרו בטא ובקשו השוואה משפחתית.                                                                   |
+| 2. Follow-up / המשכיות              | Ask `מה חלקי בפער התקציב?`, then refresh. The known profile and conversation persist. / בדקו שאלת המשך ושמירה אחרי רענון.                                                                                                                                 |
+| 3. Policy rejection / חסימת זכאות   | For Beta, send `אני רוצה לוותר על רכב`. The fictional occupation requires a car; no approved waiver net should be invented. / הוויתור נחסם לפי העיסוק.                                                                                                    |
+| 4. Eligible waiver / ויתור מותר     | Select **פרופיל הדגמה גמא**, start a new conversation and request waiver. Expect **16,778 → 18,470**, difference **+1,692**. / עברו לגמא ולשיחה חדשה.                                                                                                     |
+| 5. Hypothesis / תרחיש היפותטי       | Open Scenario Lab, choose a vehicle, calculate, save and reload. The imported profile remains unchanged. / חשבו ושמרו בלי לשנות את נתוני המקור.                                                                                                           |
+| 6. Human handoff / פנייה לנציג      | After selecting an alternative, send `נציג לאישור השתתפות` and confirm the handoff. Open the representative screen, enter the local demo role with an empty code, answer the ticket and return to the employee chat. / אשרו פנייה, ענו כנציג וחזרו לשיחה. |
+
+All figures are demonstration units displayed with a ₪ symbol. The annual view assumes 12 unchanged months; it is not an annual payroll forecast.
+
+<a id="setup"></a>
+
+## Local setup and run / התקנה והפעלה מקומית
+
+**Prerequisites / דרישות:** the .NET SDK pinned by [`global.json`](global.json): **10.0.404**, with compatible patch roll-forward; **Node.js 22+**, npm and **Python 3.10+**. Restore/install downloads public packages and browser binaries. The running advisor needs no API key, paid service, hosting subscription or external account.
+
+**Linux/macOS shell — from the repository root / מתיקיית השורש:**
 
 ```sh
 dotnet restore StraussDriveAI-Portfolio.sln
@@ -71,17 +140,54 @@ npm --prefix frontend ci
 python3 tools/run_demo.py
 ```
 
-Open **http://127.0.0.1:5173**. Both servers bind to loopback; API port **5080**, frontend **5173**. If frontend port 5173 is occupied, use `python3 tools/run_demo.py --frontend-port 5174 --api-port 5081`. Ctrl+C stops both. The launcher uses Development demo enrollment and a local `.local/portfolio.db`. Leave the representative code empty for the local role demonstration. All local profiles are fictional. No `.env` file or credential is needed. The runtime contains no external AI networking adapter, so supplying an API key cannot enable paid calls.
+**Windows PowerShell command equivalents / פקודות מקבילות ב-PowerShell:**
 
-For a production-style frontend build / לבניית הממשק:
+```powershell
+dotnet restore StraussDriveAI-Portfolio.sln
+dotnet build StraussDriveAI-Portfolio.sln --no-restore
+npm --prefix frontend ci
+py -3 tools/run_demo.py
+```
+
+Use `python` instead of `py -3` if that is how Python is installed. **Execution was validated on Linux; Windows and macOS have not been manually verified.** The PowerShell block documents command syntax, not an additional platform-support claim.
+
+Open **http://127.0.0.1:5173**. The frontend and API bind to loopback on ports **5173** and **5080**. Ctrl+C stops the launcher’s servers. Its Development-mode enrollment uses a fictional local account and `.local/portfolio.db`; no `.env` or credentials are needed. The external AI adapter is absent, so adding an API key does not enable live calls.
+
+If ports are occupied / אם הפורטים תפוסים:
+
+```sh
+python3 tools/run_demo.py --frontend-port 5174 --api-port 5081
+```
+
+In PowerShell, substitute `py -3` for `python3`. Open port 5174 for that invocation. The launcher expects the default **Debug** backend build above.
+
+Build the frontend / בניית הממשק:
 
 ```sh
 npm --prefix frontend run build
 ```
 
-`frontend/dist` includes third-party notices. Build outputs, local databases and keys are ignored and are **not** part of the source release. Do not upload local state or deploy this demo as an organizational service.
+`frontend/dist` includes third-party notices. Dependencies, build outputs, local databases and signing keys are ignored by Git and are not part of the source release. Do not upload local application state.
 
-## Testing / בדיקות
+<a id="tests"></a>
+
+## Testing and verified results / בדיקות ותוצאות מאומתות
+
+The following results are recorded for portfolio commit [`b045bfe`](https://github.com/hadas1906-commits/StraussDriveAI-Portfolio/commit/b045bfec93c97c33044a3d845fc9294d188843fd), on **21 November 2026**. They come from this fictional edition, not the private project. This documentation-only revision does not claim a new application test run. [Commands, cases and limits](docs/VALIDATION.md).
+
+| Automated verification / בדיקה אוטומטית       | Recorded result / תוצאה מתועדת                                           |
+| --------------------------------------------- | ------------------------------------------------------------------------ |
+| Backend / שרת                                 | **57 tests passed**, zero failed/skipped                                 |
+| Frontend / ממשק                               | **11 tests passed**                                                      |
+| Independent financial references / ערכי ייחוס | **50 field checks matched**, zero mismatches, across five original cases |
+| Browser workflows / תהליכים בדפדפן            | **10 passed**: five desktop and five mobile-emulated Chromium cases      |
+| .NET and frontend builds / בנייה              | Passed; .NET build had zero warnings/errors                              |
+
+**Automated coverage** includes financial outcomes, eligibility, electric gross-up, tool authority/deduplication, CSRF/ownership/roles, persistence, handoff, scenario save/reload and targeted axe accessibility checks. **Manual inspection** covers screenshot content and presentation; it is not a separate financial or accessibility certification. Mobile coverage is browser emulation, not physical-device testing.
+
+הבדיקות האוטומטיות נפרדות מהסקירה החזותית של הצילומים. אין כאן מדד להבנת שפה של מודל חי או טענה לבדיקה בכל מכשיר ודפדפן.
+
+From the repository root / מתיקיית השורש:
 
 ```sh
 dotnet test StraussDriveAI-Portfolio.sln
@@ -90,7 +196,7 @@ npm --prefix frontend run build
 dotnet run --project tools/StraussDrive.Data
 ```
 
-Browser tests / בדיקות דפדפן:
+Browser tests — stop the local demo first / בדיקות דפדפן — עצרו קודם את ההדגמה:
 
 ```sh
 cd frontend
@@ -98,31 +204,41 @@ npx playwright install chromium
 npm run test:e2e
 ```
 
-If Chromium is already installed, set `PLAYWRIGHT_CHROMIUM_EXECUTABLE` to its path; `/usr/bin/chromium` is detected automatically on Linux. Browser-test traffic is restricted to localhost. Keep ports 5080/5173 free; stop the demo before testing. For occupied ports, set `PORTFOLIO_API_PORT` and `PORTFOLIO_UI_PORT` to distinct unprivileged ports for Playwright. Test servers use temporary synthetic databases, never a production service.
+`cd frontend` changes the working directory; return to the repository root before running root-level commands again. On Linux, `/usr/bin/chromium` is detected automatically. Alternatively set `PLAYWRIGHT_CHROMIUM_EXECUTABLE` to an installed Chromium executable. Test traffic is restricted to localhost, using temporary fictional databases.
 
-`data/portfolio-demo.json` contains five independently authored financial cases (50 field checks). [The Python reference oracle](tools/author_fictional_references.py) uses an independent Decimal implementation and imports no application code. It is an explicit authoring tool, not run by tests to rewrite expected results. [Validation evidence](docs/VALIDATION.md) records actual results for this edition; previous private-project test counts are not reused.
+For alternate test ports, from the repository root / פורטים חלופיים לבדיקות:
 
-## English — project overview
+```sh
+# Linux/macOS
+PORTFOLIO_API_PORT=5081 PORTFOLIO_UI_PORT=5174 npm --prefix frontend run test:e2e
+```
 
-This portfolio shows how a conversational product can support financial decisions without giving a language model authority over money or eligibility. The retained C# engine handles decimal arithmetic and gross-up; server-owned profiles, bounded capabilities and explicit confirmations protect the workflow. The React interface presents comparisons, evidence, explanations and human follow-up.
+```powershell
+# PowerShell — current session only; remove the overrides when finished
+$env:PORTFOLIO_API_PORT = "5081"
+$env:PORTFOLIO_UI_PORT = "5174"
+npm --prefix frontend run test:e2e
+Remove-Item Env:PORTFOLIO_API_PORT, Env:PORTFOLIO_UI_PORT
+```
 
-The original challenge import layer, source artifacts, benchmark answers and screenshots have been removed. The replacement has six invented vehicles, five unmistakably fictional profiles, three occupations and newly authored policy/tax tables. These are original examples, not renamed challenge rows. The family policy requires three eligible children up to age 20 and splits the positive gap 40% employee / 60% employer. The electric net benefit is 175 demonstration units. None of these are real payroll guidance.
+The browser fixture also uses Linux-style temporary paths, so Windows browser execution is not established. The [Python Decimal oracle](tools/author_fictional_references.py) independently authored the committed financial expectations without importing application code. It is an explicit fixture-authoring tool; tests do not run it to overwrite expected results.
 
-The local planner is deterministic and recognizes a limited documented vocabulary. It is not an LLM and no live-AI quality is claimed. The provider interface, structured goal/tool contracts, orchestrator and native-plan regression tests remain available for architectural review; the external HTTP AI adapter is deliberately absent. This is not an official Strauss/Microsoft service and has no connection to the author's paid deployment.
+<a id="boundaries"></a>
 
-Security includes separate signed demo-role cookies, ownership checks, CSRF defenses and rate limits. Demo role enrollment is a teaching facility, not enterprise authentication. SQLite/key storage is local; no real personal data should be entered. Browser coverage is desktop/mobile Chromium, not a universal accessibility or security certification.
+## Limitations, security and rights / מגבלות, אבטחה וזכויות
 
-## Source, licensing and publication / מקור, רישוי ופרסום
+- **Fiction, not payroll advice / נתונים פיקטיביים:** year 2099, invented vehicles and policies; no real tax/legal accuracy. No official Strauss PDF, workbook, JSON, government dataset or private-project history is distributed.
+- **Deterministic, not an LLM / דטרמיניסטי:** limited Hebrew vocabulary and documented prompts. No live-model quality claim, OCR, HR/payroll integration or autonomous external actions. The quality screen’s local counters are not proof of language understanding.
+- **Demo identity / זהות הדגמה:** signed employee/representative cookies, ownership checks, CSRF defenses and rate limits are implemented. They are not SSO or enterprise authentication. Secure-cookie behavior depends on environment/HTTPS; the local Development demo runs over loopback HTTP. The optional Basic gate uses synthetic credentials in tests, not shared access details for a live service.
+- **Local state / מצב מקומי:** SQLite and signing keys are local; there is no application-level database encryption. Use fictional inputs only. Organizational retention, recovery, load and security review remain outside this portfolio’s readiness claims.
+- **Verification limits / גבולות הבדיקה:** Chromium desktop/mobile emulation and targeted automated accessibility checks; no universal browser/device coverage, full accessibility certification or production-readiness claim.
 
-- [Provenance and exclusions](docs/PROVENANCE.md): retained project implementation versus excluded supplied materials.
-- [Rights and contributor review](docs/LICENSING.md): public viewing without a project-code license; sole human authorship with AI assistance is confirmed; any separate contractual publication restrictions still require clearance.
-- [Third-party notices](THIRD_PARTY_NOTICES.md): upstream terms are preserved, not relicensed.
-- [Release review and publication checklist](docs/RELEASE_REVIEW.md): review the fresh history and wait for explicit owner approval before creating or publishing a repository.
+### Credits and source-visible policy / קרדיטים ומדיניות צפייה בקוד
 
-No public repository, remote, hosted demo, account integration or deployment is created by preparing this edition.
+Heebo fonts use **OFL-1.1** and Lucide icons **ISC**. Other packages retain their upstream terms; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Generic inline car artwork is project implementation. [Provenance and excluded materials](docs/PROVENANCE.md) distinguish it from third-party and supplied challenge materials.
 
-### Rights / זכויות
+**No MIT or other project-code license is granted** for owner-controlled code, documentation, artwork or fictional examples. Public visibility does not itself grant broad reuse, modification or redistribution rights. GitHub platform terms and legal exceptions still apply; public repositories can be viewed/forked and are technically downloadable. Third-party rights are not overridden. Installation instructions describe technical capability, not a general reuse license. [Rights and authorship review](docs/LICENSING.md).
 
-**English:** This portfolio is intended for public recruiter inspection. No MIT or other project-code license is granted for owner-controlled implementation, documentation, artwork or fictional examples. Public visibility does not itself grant broad reuse, modification or redistribution rights. GitHub platform terms and applicable legal exceptions still apply. Third-party components retain their own licenses, listed in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Installation instructions describe technical capability and are not a general reuse license.
+**לא ניתן רישיון MIT או רישיון כללי אחר לפרויקט.** פרסום לצפייה אינו מעניק כשלעצמו זכויות שימוש חוזר, שינוי או הפצה רחבות. תנאי GitHub והחריגים שבדין ממשיכים לחול, ורישיונות צד שלישי נשמרים. הוראות ההפעלה אינן רישיון שימוש כללי.
 
-**עברית:** הפורטפוליו מיועד לעיון של מגייסים. לא ניתן רישיון MIT או רישיון כללי אחר לקוד, לתיעוד, לאיורים ולדוגמאות שבשליטת בעלי הזכויות בפרויקט. פרסום לצפייה אינו מעניק כשלעצמו זכויות שימוש חוזר, שינוי או הפצה רחבות. תנאי GitHub והחריגים הקבועים בדין ממשיכים לחול; רכיבי צד שלישי נשארים כפופים לרישיונות שלהם. הוראות ההתקנה מתארות יכולת טכנית ואינן רישיון שימוש כללי.
+This repository is already public. [Release history](docs/RELEASE_REVIEW.md) separates the owner-authorized publication from historical pre-release checks and their original limitations. Publication is not a legal certification of ownership or of agreements that were not available for review. No paid production demo is linked, and no hosted service is required to inspect or run this portfolio locally.

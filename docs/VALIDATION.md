@@ -1,16 +1,18 @@
 # Validation of the fictional portfolio edition
 
+**Publication context:** the reviewed portfolio is now [public](https://github.com/hadas1906-commits/StraussDriveAI-Portfolio). The sections below retain dated preparation/test evidence. Earlier statements about an absent remote or an unpublished edition describe their original review stage, not today's repository status. See [release history](RELEASE_REVIEW.md).
+
 These are new runs against `data/portfolio-demo.json`; no private-project test results are reused. The source runtime contains no HTTP AI adapter and registers the deterministic planner unconditionally. No paid provider or cloud service was called. Initial validation: 20 November 2026; final rerun: 21 November 2026 (Asia/Jerusalem).
 
-| Check | Command | Actual result |
-|---|---|---|
-| Backend build | `dotnet build StraussDriveAI-Portfolio.sln --no-restore -m:2` | Passed, zero warnings/errors |
-| Backend tests | `dotnet test StraussDriveAI-Portfolio.sln --no-build --no-restore` | 57 passed, zero failed/skipped |
-| Frontend tests | `npm --prefix frontend test` | 11 passed |
-| Frontend build | `npm --prefix frontend run build` | Passed; includes third-party notices alongside bundles/fonts |
-| Documented local launcher | `python3 tools/run_demo.py --api-port 5182 --frontend-port 5183` | API healthy, frontend HTTP 200 with demo banner, provider `deterministic-demo`; shutdown verified by both ports closing |
-| Independent fictional references | `dotnet run --no-build --project tools/StraussDrive.Data` | 50 field checks matched, zero mismatches |
-| Browser workflows | `CI=1 PORTFOLIO_API_PORT=5180 PORTFOLIO_UI_PORT=5181 npm --prefix frontend run test:e2e` | 10 passed: five desktop and five mobile Chromium |
+| Check                            | Command                                                                                  | Actual result                                                                                                           |
+| -------------------------------- | ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Backend build                    | `dotnet build StraussDriveAI-Portfolio.sln --no-restore -m:2`                            | Passed, zero warnings/errors                                                                                            |
+| Backend tests                    | `dotnet test StraussDriveAI-Portfolio.sln --no-build --no-restore`                       | 57 passed, zero failed/skipped                                                                                          |
+| Frontend tests                   | `npm --prefix frontend test`                                                             | 11 passed                                                                                                               |
+| Frontend build                   | `npm --prefix frontend run build`                                                        | Passed; includes third-party notices alongside bundles/fonts                                                            |
+| Documented local launcher        | `python3 tools/run_demo.py --api-port 5182 --frontend-port 5183`                         | API healthy, frontend HTTP 200 with demo banner, provider `deterministic-demo`; shutdown verified by both ports closing |
+| Independent fictional references | `dotnet run --no-build --project tools/StraussDrive.Data`                                | 50 field checks matched, zero mismatches                                                                                |
+| Browser workflows                | `CI=1 PORTFOLIO_API_PORT=5180 PORTFOLIO_UI_PORT=5181 npm --prefix frontend run test:e2e` | 10 passed: five desktop and five mobile Chromium                                                                        |
 
 Local port overrides avoid occupied shared-workspace ports; the documented defaults remain 5080/5173. Windows/macOS launcher paths are not manually verified in this Linux run.
 
@@ -22,13 +24,13 @@ Backend tests cover five independent financial fixtures, different occupation gr
 
 All figures are fictional demonstration units, displayed with a shekel symbol; year 2099 is not a real tax regime.
 
-| Profile | Current net | Alternative net | Difference |
-|---|---:|---:|---:|
-| DEMO-P01 / Alpha: ORBIT → PULSE | 9,945 | 10,138 | +193 |
-| DEMO-P02 / Beta: MEADOW → HARBOR family | 13,074 | 12,085 | −989 |
-| DEMO-P03 / Gamma: SUMMIT → waiver | 16,778 | 18,470 | +1,692 |
-| DEMO-P04 / Delta: ORBIT → LANTERN | 11,152 | 11,203 | +51 |
-| DEMO-P05 / Epsilon: waiver → ORBIT | 10,591 | 9,555 | −1,036 |
+| Profile                                 | Current net | Alternative net | Difference |
+| --------------------------------------- | ----------: | --------------: | ---------: |
+| DEMO-P01 / Alpha: ORBIT → PULSE         |       9,945 |          10,138 |       +193 |
+| DEMO-P02 / Beta: MEADOW → HARBOR family |      13,074 |          12,085 |       −989 |
+| DEMO-P03 / Gamma: SUMMIT → waiver       |      16,778 |          18,470 |     +1,692 |
+| DEMO-P04 / Delta: ORBIT → LANTERN       |      11,152 |          11,203 |        +51 |
+| DEMO-P05 / Epsilon: waiver → ORBIT      |      10,591 |           9,555 |     −1,036 |
 
 The reference authoring tool is independent Python Decimal code, not the application engine. Tests read committed expectations and never regenerate them. Beta's family gap is 5,300 − 3,300 = 2,000; employee share 800 and employer share 1,200. The electric benefit is 175 net. Display rounding is separate from precise internal arithmetic.
 
@@ -51,3 +53,11 @@ Fresh final runs: .NET build passed with zero warnings/errors; 57 backend tests 
 All four screenshots were visually reviewed in the recruiter review; the final browser run regenerated them from the same fictional implementation. Advisor framing uses a local multi-vehicle summary; the comparison capture waits for its chart. The README links resolve, the fictional/deterministic labels are accurate, and there is no hosted production link. The 91-file secret/privacy scan passed, including English OCR of four PNGs. The reachable preparation-history blobs were separately checked for common secret patterns and forbidden source artifacts; no matches were found. Original source artifacts had no hash matches in the release file set. No personal profile identifiers, original datasets or application-state files are distributed.
 
 The original worktree remains clean. The separate portfolio has no remote, no project-code LICENSE and no copied private history. Final local changes are committed for review, not published. Technical/source-distribution checks pass; contractual publication clearance remains conditional as explained in `RELEASE_REVIEW.md` because no separate participation/employment/IP agreement was available to review. No requirement for blanket MIT licensing or automatic organizer consent is asserted.
+
+## Published README review — 22 November 2026
+
+This documentation-only revision reorganizes the bilingual README for recruiter review, adds captions/navigation for the four existing screenshots, and distinguishes the published repository from historical pre-release records. The 57/11/50/10 application-test counts above remain the dated 21 November portfolio evidence; no application test suite was rerun for this README change.
+
+The README claims were checked against the domain engine, API role/ownership/CSRF/rate-limit code, deterministic provider registration, goal/capability contracts, Scenario Lab, decision evidence, original fixture, SDK/package configuration, launcher and browser-test configuration. Setup commands were inspected, not represented as new platform tests. PowerShell examples describe syntax only; Windows/macOS runtime support is still unverified, and the browser fixture contains Linux-style temporary paths.
+
+Documentation checks cover Markdown formatting, unique navigation targets, local file links, documentation-only diff scope and unchanged third-party notices/no-project-license status. All four existing public screenshot URLs returned HTTP 200; their PNG data matched the reviewed source byte-for-byte and decoded at 1440×1797, 1440×1200, 1440×2301 and 1440×1266 respectively. Screenshot provenance and visual inspection are retained from the preceding review; images were not altered or regenerated. Browser review is limited to the public GitHub README, not a new application workflow run. No app security, dependency or deployment configuration is changed. The README Mermaid block also rendered successfully with a temporary standalone Mermaid 11 renderer (nine nodes); no renderer dependency was added to the project.

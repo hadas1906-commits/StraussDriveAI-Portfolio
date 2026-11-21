@@ -2,7 +2,7 @@
 
 ## Current decision
 
-The owner wants recruiter access to source, screenshots and documentation, without a broad MIT reuse grant. **No MIT or other project-code license is applied or planned for this publication.** Public availability is not an open-source license. Publication remains subject to a separate explicit owner approval.
+The owner wants recruiter access to source, screenshots and documentation, without a broad MIT reuse grant. **No MIT or other project-code license is applied or planned for this publication.** Public availability is not an open-source license. The owner explicitly authorized publication of the reviewed edition, and the source repository is now public. This publication does not add a project-code license.
 
 No project-code LICENSE or explicit redistribution grant was found in the source repository. The retained implementation is owner-supplied project code; Git possession and commit authorship cannot independently establish legal title.
 
@@ -12,11 +12,11 @@ On 21 November 2026, the owner explicitly confirmed that all project code was de
 
 This records the owner's statement; it is not an independent legal determination of copyright title or of the copyrightability of AI-assisted material. Third-party dependencies remain separately licensed and are not claimed as owner-authored implementation.
 
-### Remaining redistribution check
+### Redistribution review and scope
 
 The supplied challenge instructions request source code as a submission deliverable, but no explicit assignment of independently written code or restriction on its public publication was identified in that document. Challenge datasets/documents are excluded, so no redistribution permission for those excluded files is being asserted or needed for this edition.
 
-No separate participant agreement, employment/IP agreement or other publication contract was supplied. Its existence/applicability cannot be inferred from sole authorship. **Remaining contractual clearance condition:** the owner must confirm that no separate applicable agreement restricts public publication of the retained code/artwork, or resolve a restriction if one exists. This does not establish that organizer approval is always required. If no such agreement applies, no additional organizer permission has been identified as necessary for the reviewed source-only edition.
+No separate participant agreement, employment/IP agreement or other publication contract was supplied. Its existence/applicability cannot be inferred from sole authorship. The publication authorization does not independently verify separate contractual rights: any applicable agreement restricting public distribution of retained code/artwork still needs to be respected. This does not establish that organizer approval is always required. If no such agreement applies, no additional organizer permission has been identified as necessary for the reviewed source-only edition.
 
 ## What no license means
 
@@ -26,7 +26,7 @@ No separate participant agreement, employment/IP agreement or other publication 
 - Recruiters can inspect the portfolio. The absence of an explicit license can discourage reuse and makes permission for activities beyond platform viewing/forking less clear. Local-install instructions describe technical capability, not a new general license. If an express, narrowly scoped evaluation/run permission is later desired, approve that separately instead of assuming it is granted here.
 - A no-license decision does not eliminate obligations in font/icon/dependency licenses and does not permit public distribution of code owned by another contributor without sufficient permission. No project-wide reservation can override upstream rights in those components.
 
-The README documents this status without claiming that all third-party materials belong to the owner. A custom restrictive license is not added. If contributor ownership or contract terms are uncertain, obtain specific permission or remove/reimplement the affected material before publication. This review is practical release guidance, not a legal determination of ownership.
+The README documents this status without claiming that all third-party materials belong to the owner. A custom restrictive license is not added. If contributor ownership or contract terms are uncertain, obtain specific permission or remove/reimplement the affected material before distributing it. This review is practical release guidance, not a legal determination of ownership.
 
 ## Reference points
 
